@@ -9,7 +9,8 @@ print("Hello, " + input("What is your name? ") + "!.")
 # 2. Write a program that asks the user for the radius of a circle and the prints out the area of the circle.
 
 radius = int(input("What is the radius of a circle? "))
-area = 3.14 * (radius**2)
+Pi = 3.14
+area = Pi * (radius**2)
 print(f"The area of a circle is {area}")
 
 
