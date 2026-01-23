@@ -3,15 +3,15 @@
 # and notifies the user of how many centimeters below the size limit the caught fish was. A zander must be 42 centimeters
 # or longer to meet the size limit.
 
-optimal_length = 42
-
-zander_length = float(input("Enter length of the zander in cm. "))
-
-if zander_length >= optimal_length:
-    print("Great! The zander fulfills the size limit criteria. ")
-else:
-    size_eval = round(optimal_length - zander_length)
-    print(f"Please release the fish back into the lake. It is {size_eval} cm smaller than optimal size required for harvesting. ")
+# optimal_length = 42
+#
+# zander_length = float(input("Enter length of the zander in cm. "))
+#
+# if zander_length >= optimal_length:
+#     print("Great! The zander fulfills the size limit criteria. ")
+# else:
+#     size_eval = round(optimal_length - zander_length)
+#     print(f"Please release the fish back into the lake. It is {size_eval} cm smaller than optimal size required for harvesting. ")
 
 # ---------------------------------------------------------------------------------------------------------------------
 #2. Write a program that asks the user to enter the cabin class of a cruise ship and then prints out a written
@@ -22,6 +22,19 @@ else:
 # B: windowless cabin above the car deck.
 # C: windowless cabin below the car deck.
 # If the user enters an invalid cabin class, the program outputs an error message Invalid cabin class.
+
+cabin= input("Choose your cabin class: LUX, A, B, or C . ")
+
+if cabin == "LUX":
+    print("LUX: upper-deck cabin with a balcony.")
+elif cabin == "A":
+    print("A: above the car deck, equipped with a window.")
+elif cabin == "B":
+    print("B: windowless cabin above the car deck.")
+elif cabin == "C":
+    print("windowless cabin below the car deck.")
+else:
+    print("Invalid cabin class.")
 
 
 
