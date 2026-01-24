@@ -11,27 +11,51 @@
 #-----------------------------------------------------------------------------------------------------------------------
 # 2- Write a program that converts inches to centimeters until the user inputs a negative value. Then the program ends.
 
-an_inch = "2.54cm"
-
-user_input = int(input("Enter an integer to convert from inch to cm: "))
-
-while  not (user_input < 1):
-    input_in_cm = user_input * 2.54
-    print(input_in_cm)
-    user_input = int(input("Enter an integer to convert from inch to cm: "))
-
-print("The program ended")
+# an_inch = "2.54cm"
+#
+# user_input = int(input("Enter an integer to convert from inch to cm: "))
+#
+# while  not (user_input < 1):
+#     input_in_cm = user_input * 2.54
+#     print(input_in_cm)
+#     user_input = int(input("Enter an integer to convert from inch to cm: "))
+#
+# print("The program ended")
 
 
 # 3- Write a program that asks the user to enter numbers until they enter an empty string to quit. Finally, the program
 # prints out the smallest and largest number from the numbers it received.
+
+userInput = input("Enter a number: ")
+
+numbers_list = []
+
+while True:
+    try:
+        value = int(userInput)
+        numbers_list.append(value)
+        # print(numbers_list)
+        userInput = input("Enter a number: ")
+
+    except ValueError:
+        print("Exiting the program")
+        break
+
+
+smallest_no = min(numbers_list)
+largest_no = max(numbers_list)
+
+print(f"The smallest number is {smallest_no} and the largest number is {largest_no}")
+
+
+
+
 
 
 
 
 
 #-----------------------------------------------------------------------------------------------------------------------
-
 # 4- Write a game where the computer draws a random integer between 1 and 10. The user tries to guess the number until
 # they guess the right number. After each guess the program prints out a text: Too high, Too low or Correct. Notice that
 # the computer must not change the number between guesses.
