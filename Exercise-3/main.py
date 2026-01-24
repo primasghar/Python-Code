@@ -2,7 +2,9 @@
 # If the zander does not fulfill the size limit, the program instructs to release the fish back into the lake
 # and notifies the user of how many centimeters below the size limit the caught fish was. A zander must be 42 centimeters
 # or longer to meet the size limit.
-
+#
+# print("Zander's length measurement app")
+#
 # optimal_length = 42
 #
 # zander_length = float(input("Enter length of the zander in cm. "))
@@ -22,6 +24,9 @@
 # B: windowless cabin above the car deck.
 # C: windowless cabin below the car deck.
 # If the user enters an invalid cabin class, the program outputs an error message Invalid cabin class.
+
+
+# print("Cabin class app")
 
 # cabin= input("Choose your cabin class: LUX, A, B, or C . ")
 
@@ -43,9 +48,11 @@
 # A normal hemoglobin value for adult females is between 117-155 g/l.
 # A normal hemoglobin value for adult males is between 134-167 g/l.
 
+# print("Haemoglobin app")
+
 # gender = input("Choose your biological gender: Female or Male: ")
-#
-# if gender == "Female":
+
+# if gender == "Female" or gender == "female"  or gender == "f":
 #     hemoglobin_value = int(input("Enter your hemoglobin value (g/l): "))
 #     if hemoglobin_value > 155:
 #         print("You have high Hb.")
@@ -53,7 +60,7 @@
 #         print("You have low Hb.")
 #     else:
 #         print("You have normal Hb.")
-# elif gender == "Male":
+# elif gender == "Male" or gender == "male" or gender == "m":
 #      hemoglobin_value = int(input("Enter your hemoglobin value (g/l): "))
 #      if hemoglobin_value > 167:
 #          print("You have high Hb.")
@@ -68,18 +75,16 @@
 #4. Write a program that asks the user to enter a year and notifies the user whether the input year is a leap year.
 # A year is a leap year if it is divisible by four. However, years divisible by 100 are leap years only if they are also divisible by 400.
 
-entered_year = int(input("Please enter year: "))
 
-year_divided_4 = entered_year % 4
-year_divided_100 = entered_year % 100
-year_divided_400 = entered_year % 400
+# print("Leap year app")
 
-
-print(year_divided_4)
-print(year_divided_100)
-print(year_divided_400)
-
-if year_divided_4 == 0 or year_divided_400 == 0:
-    print(f"{entered_year} is a leap year")
-else:
-    print(f"{entered_year} is not a leap year")
+# entered_year = int(input("Please enter year: "))
+#
+# year_divided_4 = entered_year % 4
+# year_divided_100 = entered_year % 100
+# year_divided_400 = entered_year % 400
+#
+# if year_divided_4 == 0 or year_divided_400 == 0:
+#     print(f"{entered_year} is a leap year")
+# else:
+#     print(f"{entered_year} is not a leap year")
