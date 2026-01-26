@@ -1,4 +1,5 @@
 # 1- Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
+import random
 
 # number = 1
 #
@@ -26,41 +27,49 @@
 # 3- Write a program that asks the user to enter numbers until they enter an empty string to quit. Finally, the program
 # prints out the smallest and largest number from the numbers it received.
 
-userInput = input("Enter a number: ")
-
-numbers_list = []
-
-while True:
-    try:
-        value = int(userInput)
-        numbers_list.append(value)
-        # print(numbers_list)
-        userInput = input("Enter a number: ")
-
-    except ValueError:
-        print("Exiting the program")
-        break
-
-
-smallest_no = min(numbers_list)
-largest_no = max(numbers_list)
-
-print(f"The smallest number is {smallest_no} and the largest number is {largest_no}")
-
-
-
-
-
-
-
-
+# userInput = input("Enter a number: ")
+#
+# numbers_list = []
+#
+# while True:
+#     try:
+#         value = int(userInput)
+#         numbers_list.append(value)
+#         # print(numbers_list)
+#         userInput = input("Enter a number: ")
+#
+#     except ValueError:
+#         print("Exiting the program")
+#         break
+#
+#
+# smallest_no = min(numbers_list)
+# largest_no = max(numbers_list)
+#
+# print(f"The smallest number is {smallest_no} and the largest number is {largest_no}")
 
 #-----------------------------------------------------------------------------------------------------------------------
 # 4- Write a game where the computer draws a random integer between 1 and 10. The user tries to guess the number until
 # they guess the right number. After each guess the program prints out a text: Too high, Too low or Correct. Notice that
 # the computer must not change the number between guesses.
 
+# Guess the Number
 
+computer_number = random.randint(1, 10)
+
+user_guess = int(input("Please guess the number between 1 to 10: "))
+
+print(computer_number)
+
+while user_guess != computer_number:
+    if user_guess < computer_number:
+        print("Too low")
+    else:
+        print("Too high")
+    user_guess = int(input("Please again guess the number between 1 to 10: "))
+    print(computer_number) #to check computer ans have not changed.
+else:
+    print("Correct")
 
 
 #-----------------------------------------------------------------------------------------------------------------------
