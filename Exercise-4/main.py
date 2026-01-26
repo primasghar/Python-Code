@@ -53,23 +53,23 @@ import random
 # they guess the right number. After each guess the program prints out a text: Too high, Too low or Correct. Notice that
 # the computer must not change the number between guesses.
 
-# Guess the Number
+# print("Guess the Number")
 
-computer_number = random.randint(1, 10)
-
-user_guess = int(input("Please guess the number between 1 to 10: "))
-
-print(computer_number)
-
-while user_guess != computer_number:
-    if user_guess < computer_number:
-        print("Too low")
-    else:
-        print("Too high")
-    user_guess = int(input("Please again guess the number between 1 to 10: "))
-    print(computer_number) #to check computer ans have not changed.
-else:
-    print("Correct")
+# computer_number = random.randint(1, 10)
+#
+# user_guess = int(input("Please guess the number between 1 to 10: "))
+#
+# print(computer_number)
+#
+# while user_guess != computer_number:
+#     if user_guess < computer_number:
+#         print("Too low")
+#     else:
+#         print("Too high")
+#     user_guess = int(input("Please again guess the number between 1 to 10: "))
+#     print(computer_number) #to check computer ans have not changed.
+# else:
+#     print("Correct")
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -77,6 +77,30 @@ else:
 # user to enter the username and password again. This continues until the login information is correct or wrong credentials
 # have been entered five times. If the information is correct, the program prints out Welcome. After five failed attempts
 # the program prints out Access denied. The correct username is python and password rules.
+
+
+print("Login")
+
+correct_username = "python"
+correct_password = "rules"
+
+entered_username = (input("Please enter username "))
+entered_password = (input("Please enter password "))
+
+attempts_to_login = 0
+
+while entered_username != correct_username and entered_password != correct_password:
+    attempts_to_login += 1
+    if attempts_to_login > 5:
+        print("Access denied")
+        break
+    print("The username or password is incorrect. Please try again.")
+
+    user_name = (input("Please enter username "))
+    user_password = (input("Please enter password "))
+else:
+    print("Welcome")
+
 
 
 
