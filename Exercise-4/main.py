@@ -1,6 +1,7 @@
 # 1- Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
 import random
-import secrets
+
+# print("All numbers divisible by three")
 
 # number = 1
 #
@@ -12,6 +13,8 @@ import secrets
 
 #-----------------------------------------------------------------------------------------------------------------------
 # 2- Write a program that converts inches to centimeters until the user inputs a negative value. Then the program ends.
+
+# print("Convert Inches to centimeters")
 
 # an_inch = "2.54cm"
 #
@@ -27,6 +30,8 @@ import secrets
 
 # 3- Write a program that asks the user to enter numbers until they enter an empty string to quit. Finally, the program
 # prints out the smallest and largest number from the numbers it received.
+
+# print("Smallest and Largest numbers")
 
 # userInput = input("Enter a number: ")
 #
@@ -117,28 +122,28 @@ import secrets
 # approximation of pi to the user. (Notice that it is easy to test if a point falls inside circle A by testing if it fulfills
 # the inequation x^2+y^2<1.).
 
-print("Calculating an approximation for the value of pi (π)")
-
-total_random_points_N = int(input("How many random points to you want to generate? Please enter number: "))
-
-random_points_inside_circle_n = 0
-
-points = 0
-
-
-while points <= total_random_points_N:
-    points +=1
-
-    point_x = random.uniform(-1.0, 1.0)
-    point_y = random.uniform(-1.0, 1.0)
-
-    x_square = point_x ** 2
-    y_square = point_y ** 2
-
-    if x_square + y_square < 1:
-        random_points_inside_circle_n += 1
-
-Pi = 4 * random_points_inside_circle_n/total_random_points_N
-
-print(f"Approximate value of a pi (π): {Pi}")
+# print("Calculating an approximation for the value of pi (π)")
+#
+# total_random_points_N = int(input("How many random points to you want to generate? Please enter number: "))
+#
+# random_points_inside_circle_n = 0
+#
+# points = 0
+#
+#
+# while points <= total_random_points_N:
+#     points +=1
+#
+#     point_x = random.uniform(-1.0, 1.0)
+#     point_y = random.uniform(-1.0, 1.0)
+#
+#     x_square = point_x ** 2
+#     y_square = point_y ** 2
+#
+#     if x_square + y_square < 1:
+#         random_points_inside_circle_n += 1
+#
+# Pi = 4 * random_points_inside_circle_n/total_random_points_N
+#
+# print(f"Approximate value of a pi (π): {Pi}")
 
