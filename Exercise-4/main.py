@@ -1,5 +1,6 @@
 # 1- Write a program that uses a while loop to print out all numbers divisible by three in the range of 1-1000.
 import random
+import secrets
 
 # number = 1
 #
@@ -79,31 +80,27 @@ import random
 # the program prints out Access denied. The correct username is python and password rules.
 
 
-print("Login")
-
-correct_username = "python"
-correct_password = "rules"
-
-entered_username = (input("Please enter username "))
-entered_password = (input("Please enter password "))
-
-attempts_to_login = 0
-
-while entered_username != correct_username and entered_password != correct_password:
-    attempts_to_login += 1
-    if attempts_to_login > 5:
-        print("Access denied")
-        break
-    print("The username or password is incorrect. Please try again.")
-
-    user_name = (input("Please enter username "))
-    user_password = (input("Please enter password "))
-else:
-    print("Welcome")
-
-
-
-
+# print("Login")
+#
+# correct_username = "python"
+# correct_password = "rules"
+#
+# entered_username = (input("Please enter username "))
+# entered_password = (input("Please enter password "))
+#
+# attempts_to_login = 0
+#
+# while entered_username != correct_username and entered_password != correct_password:
+#     attempts_to_login += 1
+#     if attempts_to_login > 5:
+#         print("Access denied")
+#         break
+#     print("The username or password is incorrect. Please try again.")
+#
+#     user_name = (input("Please enter username "))
+#     user_password = (input("Please enter password "))
+# else:
+#     print("Welcome")
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -119,3 +116,29 @@ else:
 # and then calculates the approximate value of pi using the method explained above. At the end, the program prints out the
 # approximation of pi to the user. (Notice that it is easy to test if a point falls inside circle A by testing if it fulfills
 # the inequation x^2+y^2<1.).
+
+print("Calculating an approximation for the value of pi (π)")
+
+total_random_points_N = int(input("How many random points to you want to generate? Please enter number: "))
+
+random_points_inside_circle_n = 0
+
+points = 0
+
+
+while points <= total_random_points_N:
+    points +=1
+
+    point_x = random.uniform(-1.0, 1.0)
+    point_y = random.uniform(-1.0, 1.0)
+
+    x_square = point_x ** 2
+    y_square = point_y ** 2
+
+    if x_square + y_square < 1:
+        random_points_inside_circle_n += 1
+
+Pi = 4 * random_points_inside_circle_n/total_random_points_N
+
+print(f"Approximate value of a pi (π): {Pi}")
+
