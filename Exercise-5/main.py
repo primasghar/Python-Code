@@ -1,4 +1,6 @@
 import random
+from symbol import factor
+
 # 1. Write a program that asks the user how many dice to roll. The program rolls all the dice once and prints out the sum
 # of the numbers. Use a for loop.
 
@@ -22,31 +24,47 @@ import random
 # prints out the five greatest numbers sorted in descending order. Hint: You can reverse the order of sorted list items
 # by using the sort method with the reverse=True argument.
 
-print("Five greatest numbers\n(Please enter minimum 5 numbers to get the result)")
-
-number_list = []
-
-while True:
-    try:
-        number = int(input("Enter the number: "))
-        number_list.append(number)
-    except ValueError:
-        break
-
-number_list.sort(reverse=True)
-
-index_range = 5
-
-if len(number_list) >= index_range:
-    for i in range(index_range):
-            print(number_list[i])
-else:
-    print("You need minimum of 5 integer input values to get the result")
+# print("Five greatest numbers\n(Please enter minimum 5 numbers to get the result)")
+#
+# number_list = []
+#
+# while True:
+#     try:
+#         number = int(input("Enter the number: "))
+#         number_list.append(number)
+#     except ValueError:
+#         break
+#
+# number_list.sort(reverse=True)
+#
+# index_range = 5
+#
+# if len(number_list) >= index_range:
+#     for i in range(index_range):
+#             print(number_list[i])
+# else:
+#     print("You need minimum of 5 integer input values to get the result")
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 3. Write a program that asks the user for an integer and tells if the number is a prime number. Prime numbers are number
 # that are only divisible by one or the number itself.
 
+print("Find out if the number is a Prime number")
+
+user_number= int(input("Enter the number: "))
+
+list_of_factors = []
+
+for i in range(1, user_number+1):
+    print(i)
+    if user_number % i == 0:
+        list_of_factors.append(i)
+        print(list_of_factors)
+
+if len(list_of_factors) == 2 and list_of_factors[0] == 1 and list_of_factors[1] == user_number:
+    print("The number is a Prime number")
+else:
+    print("The number is not a Prime number")
 
 
 # ----------------------------------------------------------------------------------------------------------------------
