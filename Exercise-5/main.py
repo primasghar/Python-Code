@@ -22,7 +22,7 @@ import random
 # prints out the five greatest numbers sorted in descending order. Hint: You can reverse the order of sorted list items
 # by using the sort method with the reverse=True argument.
 
-print("Five greatest numbers")
+print("Five greatest numbers\n(Please enter minimum 5 numbers to get the result)")
 
 number_list = []
 
@@ -31,10 +31,17 @@ while True:
         number = int(input("Enter the number: "))
         number_list.append(number)
     except ValueError:
-        number_list.sort(reverse=True)
-        for i in range(5):
-            print(number_list[i])
         break
+
+number_list.sort(reverse=True)
+
+index_range = 5
+
+if len(number_list) >= index_range:
+    for i in range(index_range):
+            print(number_list[i])
+else:
+    print("You need minimum of 5 integer input values to get the result")
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 3. Write a program that asks the user for an integer and tells if the number is a prime number. Prime numbers are number
