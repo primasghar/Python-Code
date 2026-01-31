@@ -2,24 +2,33 @@
 # a main program that rolls the dice until the result is 6. The main program should print out the result of each roll.
 import random
 
-def roll_dice():
-    return random.randint(1,6)
-
-result = 0
-
-while result != 6:
-    result = roll_dice()
-    print(result)
-
-
-
-
+# def roll_dice():
+#     return random.randint(1,6)
+#
+# result = 0
+#
+# while result != 6:
+#     result = roll_dice()
+#     print(result)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 2. Modify the function above so that it gets the number of sides on the dice as a parameter. With the modified function
 # you can for example roll a 21-sided role-playing dice. The difference to the last exercise is that the dice rolling
 # in the main program continues until the program gets the maximum number on the dice, which is asked from the user at
 # the beginning.
+
+max_sides = int(input("Enter maximum number of you want for a dice: "))
+
+def roll_dice(sides):
+    return random.randint(1, sides)
+
+result = 0
+
+while result != max_sides:
+    result = roll_dice(max_sides)
+    print(result)
+
+
 
 
 
