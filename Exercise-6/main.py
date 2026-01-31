@@ -33,19 +33,18 @@ import random
 # Write a main program that asks for a volume in gallons from the user and converts the value to liters. The conversion
 # must be done by using the function. Conversions continue until the user inputs a negative value.
 
-print("Convert Gallons to Liters\n")
-
-def gallons_to_liters(gallons):
-    return gallons * 3.785
-
-
-volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
-
-while volume_in_gallons > 0:
-    liters = gallons_to_liters(volume_in_gallons)
-    print(f"{volume_in_gallons} gal of gasoline is equal to {liters} L. \n" )
-    volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
-
+# print("Convert Gallons to Liters\n")
+#
+# def gallons_to_liters(gallons):
+#     return gallons * 3.785
+#
+#
+# volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
+#
+# while volume_in_gallons > 0:
+#     liters = gallons_to_liters(volume_in_gallons)
+#     print(f"{volume_in_gallons} gal of gasoline is equal to {liters} L. \n" )
+#     volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -53,9 +52,24 @@ while volume_in_gallons > 0:
 # list. For testing, write a main program where you create a list, call the function, and print out the value it returned.
 
 
+def sum_it_up(list_of_integers):
+    result = 0
+    for i in list_of_integers:
+        result = i + result
+    return result
 
 
+num_list = []
 
+
+while True:
+    try:
+        enter_integer = int(input("Please enter a number: "))
+        num_list.append(enter_integer)
+
+    except ValueError:
+        print(sum_it_up(num_list))
+        break
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 5. Write a function that gets a list of integers as a parameter. The function returns a second list that is otherwise the
