@@ -17,28 +17,34 @@ import random
 # in the main program continues until the program gets the maximum number on the dice, which is asked from the user at
 # the beginning.
 
-max_sides = int(input("Enter maximum number of you want for a dice: "))
-
-def roll_dice(sides):
-    return random.randint(1, sides)
-
-result = 0
-
-while result != max_sides:
-    result = roll_dice(max_sides)
-    print(result)
-
-
-
-
-
+# max_sides = int(input("Enter maximum number of you want for a dice: "))
+#
+# def roll_dice(sides):
+#     return random.randint(1, sides)
+#
+# result = 0
+#
+# while result != max_sides:
+#     result = roll_dice(max_sides)
+#     print(result)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 3. Write a function that gets the quantity of gasoline in American gallons and returns the number converted to liters.
 # Write a main program that asks for a volume in gallons from the user and converts the value to liters. The conversion
 # must be done by using the function. Conversions continue until the user inputs a negative value.
 
+print("Convert Gallons to Liters\n")
 
+def gallons_to_liters(gallons):
+    return gallons * 3.785
+
+
+volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
+
+while volume_in_gallons > 0:
+    liters = gallons_to_liters(volume_in_gallons)
+    print(f"{volume_in_gallons} gal of gasoline is equal to {liters} L. \n" )
+    volume_in_gallons = float(input("Enter gasoline quantity in gallons: \n"))
 
 
 
