@@ -52,29 +52,55 @@ import random
 # list. For testing, write a main program where you create a list, call the function, and print out the value it returned.
 
 
-def sum_it_up(list_of_integers):
-    result = 0
-    for i in list_of_integers:
-        result = i + result
-    return result
-
-
-num_list = []
-
-
-while True:
-    try:
-        enter_integer = int(input("Please enter a number: "))
-        num_list.append(enter_integer)
-
-    except ValueError:
-        print(sum_it_up(num_list))
-        break
+# def sum_it_up(list_of_integers):
+#     result = 0
+#     for i in list_of_integers:
+#         result = i + result
+#     return result
+#
+#
+# num_list = []
+#
+#
+# while True:
+#     try:
+#         enter_integer = int(input("Please enter a number: "))
+#         num_list.append(enter_integer)
+#
+#     except ValueError:
+#         print(sum_it_up(num_list))
+#         break
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 5. Write a function that gets a list of integers as a parameter. The function returns a second list that is otherwise the
 # same as the original list except that all uneven numbers have been removed. For testing, write a main program where you
 # create a list, call the function, and then print out both the original as well as the cut-down list.
+
+def even_list_fn(list_of_integers):
+    even_list = []
+    for i in list_of_integers:
+        if i % 2 == 0:
+            even_list.append(i)
+    return even_list
+
+
+original_list = []
+
+while True:
+    try:
+        user_entered_int = int(input("Please enter a number: "))
+        original_list.append(user_entered_int)
+
+    except ValueError:
+        print("You have exited the program")
+        print(f"The original list is: {original_list} \nThe even list is:{even_list_fn(original_list)}")
+        break
+
+
+
+
+
+
 
 
 
