@@ -76,36 +76,75 @@ import random
 # same as the original list except that all uneven numbers have been removed. For testing, write a main program where you
 # create a list, call the function, and then print out both the original as well as the cut-down list.
 
-def even_list_fn(list_of_integers):
-    even_list = []
-    for i in list_of_integers:
-        if i % 2 == 0:
-            even_list.append(i)
-    return even_list
-
-
-original_list = []
-
-while True:
-    try:
-        user_entered_int = int(input("Please enter a number: "))
-        original_list.append(user_entered_int)
-
-    except ValueError:
-        print("You have exited the program")
-        print(f"The original list is: {original_list} \nThe even list is:{even_list_fn(original_list)}")
-        break
-
-
-
-
-
-
-
-
+# def even_list_fn(list_of_integers):
+#     even_list = []
+#     for i in list_of_integers:
+#         if i % 2 == 0:
+#             even_list.append(i)
+#     return even_list
+#
+#
+# original_list = []
+#
+# while True:
+#     try:
+#         user_entered_int = int(input("Please enter a number: "))
+#         original_list.append(user_entered_int)
+#
+#     except ValueError:
+#         print("You have exited the program")
+#         print(f"The original list is: {original_list} \nThe even list is:{even_list_fn(original_list)}")
+#         break
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 6. Write a function that receives two parameters: the diameter of a round pizza in centimeters and the price of the pizza
 # in euros. The function calculates and returns the unit price of the pizza per square meter. The main program asks the
 # user to enter the diameter and price of two pizzas and tells the user which pizza provides better value for money
 # (which of them has a lower unit price). You must use the function you wrote for calculating the unit prices.
+
+print("Which Pizza have a better value \n")
+
+
+def unit_price_pizza(diameter, price):
+    diameter_in_meters = diameter/100
+
+    radius = diameter_in_meters/2
+
+    area_of_pizza = 3.14 * radius**2
+
+    price_per_unit = price/area_of_pizza
+
+    # print(f"{price_per_unit}€/m²")
+
+    return round(price_per_unit)
+
+
+diameter_one = float(input("Please enter diameter of the first pizza in centimeter (cm) : "))
+price_one = float(input("Please enter price of the first pizza in euros (€): "))
+
+
+diameter_two = float(input("Please enter diameter of the second pizza in centimeter (cm) : "))
+price_two = float(input("Please enter price of the second pizza in euros (€) : "))
+
+
+first_pizza_unit_price = unit_price_pizza(diameter_one, price_one )
+second_pizza_unit_price = unit_price_pizza(diameter_two, price_two )
+
+if first_pizza_unit_price < second_pizza_unit_price:
+    print(f"The first pizza provides better value of money with price = {price_one}€  as its unit price = {first_pizza_unit_price} €/m² "
+          f"which is lower than the second pizza with unit price = {second_pizza_unit_price} €/m² ")
+else:
+    print(
+        f"The second pizza provides better value of money with price = {price_two}€  as its unit price = {second_pizza_unit_price} €/m² "
+        f"which is lower than the first pizza with unit price = {first_pizza_unit_price} €/m² ")
+
+
+
+
+
+
+
+
+
+
+
