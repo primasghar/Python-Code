@@ -59,7 +59,11 @@
 
 print("Airports in Finland")
 
-airports_in_finland = {"EFHK": "Helsinki-Vantaa Airport" }
+airports_in_finland = {"EFHK": "Helsinki-Vantaa Airport",
+                       "EFEK":"Kilpisjärvi",
+                       "EFIV": "Ivalo",
+                       "EFJO":"Joensuu",
+                       "EFYL": "Ylivieska"}
 
 
 
