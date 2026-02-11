@@ -78,13 +78,13 @@
 
 # print("Leap year app")
 
-# entered_year = int(input("Please enter year: "))
-#
-# year_divided_4 = entered_year % 4
-# year_divided_100 = entered_year % 100
-# year_divided_400 = entered_year % 400
-#
-# if year_divided_4 == 0 or year_divided_400 == 0:
-#     print(f"{entered_year} is a leap year")
-# else:
-#     print(f"{entered_year} is not a leap year")
+entered_year = int(input("Please enter year: "))
+
+year_divided_4 = entered_year % 4
+year_divided_100 = entered_year % 100
+year_divided_400 = entered_year % 400
+
+if (year_divided_4 == 0 and year_divided_100 != 0 ) or year_divided_400 == 0:
+    print(f"{entered_year} is a leap year")
+else:
+    print(f"{entered_year} is not a leap year")
