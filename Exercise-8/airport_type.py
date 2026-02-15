@@ -12,19 +12,19 @@ connection = mariadb.connect(
          autocommit=True
          )
 
-def get_airport_name_location(connection, area_code_entered):
-    sql = f"SELECT name FROM airport WHERE  iso_country = '{area_code_entered}' ORDER BY type"
+def get_airport_name_by_type(connection, area_code_entered):
+    sql = f"SELECT name, type FROM airport WHERE  iso_country = '{area_code_entered}' ORDER BY type"
     cursor=connection.cursor()
     cursor.execute(sql, (area_code_entered,))
     result = cursor.fetchall()
     if result:
         for a in result:
-            print(f" airport name: {a[0]},")
+            print(f" airport name: {a[0]}, type: {a[1]}")
     else:
         print(f"no record found : {area_code_entered}")
         cursor.close()
 
-area_code_entered = input("please enter ICAO code of an airport: ")
-get_airport_name_location(connection, area_code_entered)
+area_code_entered = input("please enter area code: ")
+get_airport_name_by_type(connection, area_code_entered)
 
 connection.close()
