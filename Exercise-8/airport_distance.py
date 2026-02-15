@@ -1,5 +1,4 @@
 import mariadb
-
 from geopy import distance
 
 # Write a program that asks the user to enter the ICAO codes of two airports.
@@ -18,14 +17,22 @@ connection = mariadb.connect(
          autocommit=True
          )
 
-def get_distance_between airports(connection, airport_A_ICAO, airport_B_ICAO):
-    sql = f"SELECT name, latitude_deg, longitude_deg FROM airport WHERE (ident = '{airport_A_ICAO}') AND (ident = '{airport_B_ICAO}')"
+def get_distance_between_airports(connection, airport_A_ICAO, airport_B_ICAO):
+    sql = f"SELECT name, latitude_deg, longitude_deg FROM airport WHERE ident = '{airport_A_ICAO}' or ident = '{airport_B_ICAO}'"
     cursor=connection.cursor()
     cursor.execute(sql, (airport_A_ICAO, airport_B_ICAO))
     result = cursor.fetchall()
     if result:
-        for a in result:
-            print(f"{a}")
+        a = result[0]
+        b = result[1]
+        
+        p1 = (a[1], a[2])
+        p2 = (b[1], b[2])
+
+        flat_distance = distance.distance(p1[:2], p2[:2]).km
+
+        print(f"The distance between {a[0]} and {b[0]} is {flat_distance:2f} km")
+
     else:
         print(f"no record found : {airport_A_ICAO} or {airport_B_ICAO}")
         cursor.close()
@@ -33,6 +40,6 @@ def get_distance_between airports(connection, airport_A_ICAO, airport_B_ICAO):
 airport_A_ICAO = input("please enter ICAO code for airport A: ")
 airport_B_ICAO = input("please enter ICAO code for airport B: ")
 
-get_distance_between airports(connection, airport_A_ICAO, airport_B_ICAO)
+get_distance_between_airports(connection, airport_A_ICAO, airport_B_ICAO)
 
 connection.close()
