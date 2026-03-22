@@ -56,8 +56,14 @@ class Car:
 
 
 for  i in range(1,11):
-    max_speed = random.randint(100,200)
     reg_no = f"ABC-{i}"
+    print(reg_no)
+
+    max_speed = random.randint(100,200)
+    print(max_speed)
+
+    change_of_speed = random.randint(-10,15)
+    print(change_of_speed)
 
     car = Car(reg_no, max_speed)
 
@@ -65,4 +71,15 @@ for  i in range(1,11):
             Registration number: {car.registration_number}
             Maximum speed: {car.maximum_speed} km/h
             Current speed: {car.current_speed} km/h
+            Distance travelled: {car.travelled_distance} km")""")
+
+    car.accelerate(change_of_speed)
+    car.drive(1)
+
+    print("After driving for an hour")
+    print(f"""Car details:
+            Registration number: {car.registration_number}
+            Maximum speed: {car.maximum_speed} km/h
+            Current speed: {car.current_speed} km/h
             Distance travelled: {car.travelled_distance}km")""")
+
