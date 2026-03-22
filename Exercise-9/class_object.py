@@ -1,8 +1,7 @@
 import random
 
-
 class Car:
-    def __init__(self, registration_number, maximum_speed, current_speed = 0,travelled_distance = 0):
+    def __init__(self, registration_number, maximum_speed, current_speed = 0, travelled_distance = 0):
         self.registration_number = registration_number
         self.maximum_speed = maximum_speed
         self. current_speed = current_speed
@@ -55,31 +54,66 @@ class Car:
 # print(f"new car distance: {int(new_car1.travelled_distance)} km")
 
 
-for  i in range(1,11):
-    reg_no = f"ABC-{i}"
-    print(reg_no)
+cars_list = []
 
-    max_speed = random.randint(100,200)
-    print(max_speed)
+def create_cars():
+    for i in range(1, 11):
+        reg_no = f"ABC-{i}"
+        max_speed = random.randint(100, 200)
 
-    change_of_speed = random.randint(-10,15)
-    print(change_of_speed)
+        car = Car(reg_no, max_speed)
+        cars_list.append(car)
 
-    car = Car(reg_no, max_speed)
+def one_hour_race():
+    for carNumber in range(len(cars_list)):
+        change_of_speed = random.randint(-10, 15)
+        drive_hour = 1
 
-    print(f"""Car details:
-            Registration number: {car.registration_number}
-            Maximum speed: {car.maximum_speed} km/h
-            Current speed: {car.current_speed} km/h
-            Distance travelled: {car.travelled_distance} km")""")
+        cars_list[carNumber].accelerate(change_of_speed)
+        cars_list[carNumber].drive(drive_hour)
 
-    car.accelerate(change_of_speed)
-    car.drive(1)
+        if  cars_list[carNumber].travelled_distance >=10000:
+            return True
+    return False
 
-    print("After driving for an hour")
-    print(f"""Car details:
-            Registration number: {car.registration_number}
-            Maximum speed: {car.maximum_speed} km/h
-            Current speed: {car.current_speed} km/h
-            Distance travelled: {car.travelled_distance}km")""")
+def print_stats():
+    table_headings = [["Registration No", "Maximum Speed", "Current Speed", "Distance Travelled"]]
+    for row in table_headings:
+        print("{: >20} {: >20} {: >20} {: >20}".format(*row))
+
+    for carNumber in range(len(cars_list)):
+        registration_number = f"{cars_list[carNumber].registration_number}"
+        maximum_speed = f"{cars_list[carNumber].maximum_speed} km/h"
+        current_speed = f"{cars_list[carNumber].current_speed} km/h"
+        distance_travelled = f"{cars_list[carNumber].travelled_distance} km"
+
+        table_data = [[registration_number, maximum_speed, current_speed, distance_travelled]]
+        for row in table_data:
+            print("{: >20} {: >20} {: >20} {: >20}".format(*row))
+
+
+def car_race():
+    create_cars()
+
+    car_reached = False
+    while not car_reached:
+       car_reached = one_hour_race()
+
+    print_stats()
+
+
+car_race()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
