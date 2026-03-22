@@ -6,10 +6,16 @@ class Car:
         self.travelled_distance = travelled_distance
 
     def accelerate(self, change_speed):
-        self.current_speed = self.current_speed + change_speed
+        new_speed =  self.current_speed + change_speed
 
-        if self.current_speed < 0 or self.current_speed > self.maximum_speed:
-            pass
+        if new_speed < 0:
+            self.current_speed = 0
+
+        elif new_speed > self.maximum_speed:
+            self.current_speed = self.maximum_speed - 1
+
+        else:
+            self.current_speed = new_speed
 
 
 new_car = Car( "ABC-123", 142)
@@ -23,6 +29,6 @@ print(f"""Car details:
 new_car.accelerate(30)
 new_car.accelerate(70)
 new_car.accelerate(50)
-print(f"current speed: {new_car.current_speed}")
+print(f"current speed: {new_car.current_speed} km/h")
 new_car.accelerate(-200)
-print(f"current speed: {new_car.current_speed}")
+print(f"current speed: {new_car.current_speed} km/h")
