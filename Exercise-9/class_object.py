@@ -1,3 +1,6 @@
+import random
+
+
 class Car:
     def __init__(self, registration_number, maximum_speed, current_speed = 0,travelled_distance = 0):
         self.registration_number = registration_number
@@ -21,6 +24,7 @@ class Car:
         distance = self.current_speed * hours
         self.travelled_distance = self.travelled_distance + distance
 
+# Solution check for part 1 and 2
 
 # new_car = Car( "ABC-123", 142)
 #
@@ -39,12 +43,26 @@ class Car:
 
 
 # Solution check for part 3
-new_car1 = Car( "ABC-123", 142, 60, 2000 )
 
-print(f"""Car details: 
-        Registration number: {new_car1.registration_number}
-        Maximum speed: {new_car1.maximum_speed} km/h
-        Current speed: {new_car1.current_speed} km/h
-        Distance travelled: {new_car1.travelled_distance}km")""")
-new_car1.drive(1.5)
-print(f"new car distance: {int(new_car1.travelled_distance)} km")
+# new_car1 = Car( "ABC-123", 142, 60, 2000 )
+#
+# print(f"""Car details:
+#         Registration number: {new_car1.registration_number}
+#         Maximum speed: {new_car1.maximum_speed} km/h
+#         Current speed: {new_car1.current_speed} km/h
+#         Distance travelled: {new_car1.travelled_distance}km")""")
+# new_car1.drive(1.5)
+# print(f"new car distance: {int(new_car1.travelled_distance)} km")
+
+
+for  i in range(1,11):
+    max_speed = random.randint(100,200)
+    reg_no = f"ABC-{i}"
+
+    car = Car(reg_no, max_speed)
+
+    print(f"""Car details:
+            Registration number: {car.registration_number}
+            Maximum speed: {car.maximum_speed} km/h
+            Current speed: {car.current_speed} km/h
+            Distance travelled: {car.travelled_distance}km")""")
