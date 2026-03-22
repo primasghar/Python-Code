@@ -17,18 +17,34 @@ class Car:
         else:
             self.current_speed = new_speed
 
+    def drive(self, hours):
+        distance = self.current_speed * hours
+        self.travelled_distance = self.travelled_distance + distance
 
-new_car = Car( "ABC-123", 142)
+
+# new_car = Car( "ABC-123", 142)
+#
+# print(f"""Car details:
+#         Registration number: {new_car.registration_number}
+#         Maximum speed: {new_car.maximum_speed} km/h
+#         Current speed: {new_car.current_speed} km/h
+#         Distance travelled: {new_car.travelled_distance}km")""")
+
+# new_car.accelerate(30)
+# new_car.accelerate(70)
+# new_car.accelerate(50)
+# print(f"current speed: {new_car.current_speed} km/h")
+# new_car.accelerate(-200)
+# print(f"current speed: {new_car.current_speed} km/h")
+
+
+# Solution check for part 3
+new_car1 = Car( "ABC-123", 142, 60, 2000 )
 
 print(f"""Car details: 
-        Registration number: {new_car.registration_number}
-        Maximum speed: {new_car.maximum_speed} km/h
-        Current speed: {new_car.current_speed} km/h
-        Distance travelled: {new_car.travelled_distance}km")""")
-
-new_car.accelerate(30)
-new_car.accelerate(70)
-new_car.accelerate(50)
-print(f"current speed: {new_car.current_speed} km/h")
-new_car.accelerate(-200)
-print(f"current speed: {new_car.current_speed} km/h")
+        Registration number: {new_car1.registration_number}
+        Maximum speed: {new_car1.maximum_speed} km/h
+        Current speed: {new_car1.current_speed} km/h
+        Distance travelled: {new_car1.travelled_distance}km")""")
+new_car1.drive(1.5)
+print(f"new car distance: {int(new_car1.travelled_distance)} km")
