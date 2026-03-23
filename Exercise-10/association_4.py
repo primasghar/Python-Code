@@ -82,7 +82,7 @@ class Race:
     def race_finished(self):
         for carNumber in range(len(self.cars_list)):
             if self.cars_list[carNumber].travelled_distance >=  self.distance:
-                print(f"Congratulations!{self.cars_list[carNumber].registration_number} won the race with {self.cars_list[carNumber].travelled_distance} km drive.")
+                print(f"Congratulations! {self.cars_list[carNumber].registration_number}, you are the winner of {self.name} race with {self.cars_list[carNumber].travelled_distance} km drive.")
                 return True
         return False
 
