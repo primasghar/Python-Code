@@ -2,11 +2,9 @@
 # the airport in JSON format. The information is fetched from the airport database used on this course.
 # For example, the GET request for EFHK would be: http://127.0.0.1:5000/airport/EFHK. The response must be in
 # the format of: {"ICAO":"EFHK", "Name":"Helsinki-Vantaa Airport", "Location":"Helsinki"}.
-
+from query_db_functions import fetch_airport_info_query
 from flask import Flask, Response
 import json
-
-from query_db_functions import fetch_airport_info_query
 
 app = Flask(__name__)
 
