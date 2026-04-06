@@ -14,12 +14,12 @@ def airport(text):
     try:
         icao = text.upper()
         airport_details = fetch_airport_info_query(icao)
-
-        response = {{
+        # print(airport_details)
+        response = {
             "ICAO": icao,
             "Name": airport_details[0],
             "Location": airport_details[1]
-        }}
+        }
 
         return response
 
